@@ -1,0 +1,50 @@
+<Window x:Class="gifDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gifDemo"
+        mc:Ignorable="d"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Title="Alfred" Height="700" Width="600"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- NEED NuGet PACKAGE: WpfAnimatedGif and line 8: xmlns:gif="http://wpfanimatedgif.codeplex.com"-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="440"/>
+            <RowDefinition Height="169"/>
+        </Grid.RowDefinitions>
+
+        <Canvas Grid.Row="0" Background="Black">
+            <Image gif:ImageBehavior.AnimatedSource="..\..\..\..\..\..\..\..\..\Gifs\aiUI.gif" 
+                   Height="440" Width="592" />
+        </Canvas>
+
+        <Canvas Grid.Row="1"  Background="Black" Margin="0,0,0,-58" >
+            <RichTextBox Name="AlfredBox"  Height="127" Width="592" 
+                         Foreground="White"  Background="Black" Opacity="0.5" 
+                         BorderBrush="Black" FontSize="14" 
+                         FontFamily="Times New Roman" >
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Alfred: How may I assist you?"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            
+            <RichTextBox Name="UserBox" Height="96" Canvas.Top="132"
+                         Width="592" Foreground="White" Background="Black"
+                         Opacity="0.5" BorderBrush="Black" FontSize="14" 
+                         FontFamily="Times New Roman" 
+                         KeyDown="UserBox_EnterButton">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=">> "/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+
+        </Canvas>
+    </Grid>
+</Window>
