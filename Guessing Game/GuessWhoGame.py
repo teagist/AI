@@ -19,9 +19,9 @@ import random
 
 
 #   Names of the files containing candidates and questions
-ENG_FNAME  = "EngGuess.txt"
-AMER_FNAME = "USGuess.txt"
-CAN_FNAME  = "CanGuess.txt"
+ENG_FNAME  = "English_Guesses.txt"
+AMER_FNAME = "US_Guesses.txt"
+CAN_FNAME  = "Canadian_Guesses.txt"
 QUES_FNAME = "QuestionList.txt"
 
 
